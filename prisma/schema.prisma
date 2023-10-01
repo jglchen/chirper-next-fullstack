@@ -1,0 +1,44 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id                Int            @id @default(autoincrement())
+  name              String
+  email             String         @unique
+  email_verified_at DateTime?
+  password          String
+  created_at        DateTime?
+  updated_at        DateTime?
+  chirps            Chirp[]
+  followers         UserFollow[]   @relation("follower")
+  followeds         UserFollow[]   @relation("followed")
+}
+
+model Chirp {
+  id              Int       @id @default(autoincrement())
+  user            User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId          Int
+  message         String
+  created_at      DateTime?
+  updated_at      DateTime?
+}
+
+model UserFollow {
+  id              Int       @id @default(autoincrement())
+  follower        User      @relation("follower", fields: [followerId], references: [id], onDelete: Cascade)
+  followerId      Int
+  followed        User      @relation("followed", fields: [followedId], references: [id], onDelete: Cascade)
+  followedId      Int
+  created_at      DateTime?
+
+  @@unique([followerId, followedId])
+}

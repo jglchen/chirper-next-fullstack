@@ -1,0 +1,10 @@
+services:
+  app:
+    image: jglchen/chirper-next-fullstack
+    ports:
+      - 3000:3000
+    volumes:
+      - chirper-prisma-sqlite:/app/prisma
+
+volumes:
+  chirper-prisma-sqlite:
