@@ -35,7 +35,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 follower: true,
             },
         });
-        const emailList = followers.map(item => item.follower.email);
+        const emailList = followers.map((item: any) => item.follower.email);
+        if (emailList.length === 0) {
+            res.status(200).json({status: 'No one follows your chirps.'});
+            return;
+        }
         
         // setup e-mail data, even with unicode symbols
         const mailOptions = {
