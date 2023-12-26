@@ -96,20 +96,20 @@ export default function UpdateProfileInformationForm({ mustVerifyEmail=false, ve
     return (
         <section className={className}>
             <header>
-                <h2 className="text-lg font-medium text-gray-900">Profile Information</h2>
+                <h2 className="text-lg font-medium text-gray-900 dark:text-gray-50">Profile Information</h2>
 
-                <p className="mt-1 text-sm text-gray-600">
+                <p className="mt-1 text-sm text-gray-600 dark:text-gray-200">
                     Update your account&rsquo;s profile information and email address.
                 </p>
             </header>
 
             <form onSubmit={updateProfile} className="mt-6 space-y-6">
                 <div>
-                    <Label htmlFor="name">Name</Label>
+                    <Label className="text-dark dark:text-white" htmlFor="name">Name</Label>
 
                     <Input
                         id="name"
-                        className="mt-1 block w-full"
+                        className="mt-1 block w-full bg-[#f8f8f8] dark:bg-[#2C303B] dark:text-white"
                         value={name}
                         onChange={(event: FormEvent) => setName((event.target as HTMLInputElement).value)}
                         required
@@ -124,12 +124,12 @@ export default function UpdateProfileInformationForm({ mustVerifyEmail=false, ve
                 </div>
 
                 <div>
-                    <Label htmlFor="email">Email</Label>
+                    <Label className="text-dark dark:text-white" htmlFor="email">Email</Label>
 
                     <Input
                         id="email"
                         type="email"
-                        className="mt-1 block w-full"
+                        className="mt-1 block w-full bg-[#f8f8f8] dark:bg-[#2C303B] dark:text-white"
                         value={email}
                         onChange={(event: FormEvent) => setEmail((event.target as HTMLInputElement).value)}
                         required
@@ -151,14 +151,14 @@ export default function UpdateProfileInformationForm({ mustVerifyEmail=false, ve
                                 href={'/'}
                                 onClick={sendVerifyEmail}
                                 as="button"
-                                className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                className="underline text-sm text-gray-600 dark:text-gray-200 hover:text-gray-900 dark:hover:text-gray-50 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                             >
                                 Click here to re-send the verification email.
                             </Link>
                         </p>
 
                         {status === 'verification-link-sent' && (
-                            <div className="mt-2 font-medium text-sm text-green-600">
+                            <div className="mt-2 font-medium text-sm text-green-600 dark:text-green-200">
                                 A new verification link has been sent to your email address.
                             </div>
                         )}
@@ -174,7 +174,7 @@ export default function UpdateProfileInformationForm({ mustVerifyEmail=false, ve
                         leaveTo="opacity-0"
                         className="transition ease-in-out"
                     >
-                        <p className="text-sm text-gray-600">Saved.</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-200">Saved.</p>
                     </Transition>
                 </div>
 

@@ -97,7 +97,7 @@ const ChirpsList = () => {
         axios
             .get('/api/chirps')
             .then((response) => {
-                //console.log(response.data.chirps);
+                console.log(response.data.chirps);
                 setPageCount(response.data.pageCount);
                 setChirps(response.data.chirps);
             });
@@ -150,7 +150,7 @@ const ChirpsList = () => {
                     <textarea
                         value={messageData}
                         placeholder="What's on your mind?"
-                        className="block w-full p-1 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                        className="block w-full p-1 bg-[#f8f8f8] dark:bg-[#2C303B] dark:text-white border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
                         required
                         onChange={e => setMessageData(e.target.value)}
                     ></textarea>
@@ -158,7 +158,7 @@ const ChirpsList = () => {
                     <Button className="mt-4" disabled={processing}>Chirp</Button>
             </form>
 
-            <div className="mt-6 bg-white shadow-sm rounded-lg divide-y">
+            <div className="mt-6 bg-white dark:bg-black shadow-sm rounded-lg divide-y">
                 {chirps.map(chirp =>
                     <Chirp 
                         key={chirp.id} 

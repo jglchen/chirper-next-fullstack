@@ -29,7 +29,7 @@ export default function Home() {
 
               <div className="p-6">
                 <div className="ml-12">
-                  <div className="mt-2 text-gray-600 dark:text-gray-400 text-base">
+                  <div className="mt-2 text-gray-600 dark:text-gray-200 text-base">
                     <p>
                       <a href="https://bootcamp.laravel.com/" target="_blank" className="underline">The Laravel Bootcamp</a> demonstrates three different ways to build a microblogging platform called Chirper, <a href="https://bootcamp.laravel.com/blade/installation" target="_blank" className="underline">with Blade</a>, <a href="https://bootcamp.laravel.com/livewire/installation" target="_blank" className="underline">with Livewire</a>, and <a href="https://bootcamp.laravel.com/inertia/installation" target="_blank" className="underline">with JavaScript and Inertia</a>.
                     </p>
@@ -54,7 +54,7 @@ export default function Home() {
               </div>
           </div>
           <div className="flex justify-center mt-4 sm:items-center sm:justify-between">
-            <div className="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
+            <div className="ml-4 text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
             Next.js Fullstack Emulating Laravel Chirper
             </div>
           </div>

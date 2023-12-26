@@ -20,15 +20,12 @@ const PasswordResetForm = () => {
     const [passwordConfirmation, setPasswordConfirmation] = useState<string>('');
     const [errors, setErrors] = useState<ErrorsType>({});
     const [status, setStatus] = useState<string | null>(null);
-    //const csrf = () => axios.get('/sanctum/csrf-cookie');
 
     useRedirectIfAuthenticated(userContext.user.id, userContext.authToken, '/dashboard');
 
     const submitForm = async (event: FormEvent) => {
         event.preventDefault()
-        
-        //await csrf();
-
+ 
         setErrors({});
         setStatus(null);
 
@@ -69,13 +66,13 @@ const PasswordResetForm = () => {
             <form onSubmit={submitForm}>
                 {/* Email Address */}
                 <div>
-                    <Label htmlFor="email">Email</Label>
+                    <Label className="text-dark dark:text-white" htmlFor="email">Email</Label>
 
                     <Input
                         id="email"
                         type="email"
                         value={email}
-                        className="block mt-1 w-full"
+                        className="block mt-1 w-full bg-[#f8f8f8] dark:bg-[#2C303B] dark:text-white"
                         onChange={(event: FormEvent) => setEmail((event.target as HTMLInputElement).value)}
                         required
                         autoFocus
@@ -86,12 +83,12 @@ const PasswordResetForm = () => {
 
                 {/* Password */}
                 <div className="mt-4">
-                    <Label htmlFor="password">Password</Label>
+                    <Label className="text-dark dark:text-white" htmlFor="password">Password</Label>
                     <Input
                         id="password"
                         type="password"
                         value={password}
-                        className="block mt-1 w-full"
+                        className="block mt-1 w-full bg-[#f8f8f8] dark:bg-[#2C303B] dark:text-white"
                         onChange={(event: FormEvent) => setPassword((event.target as HTMLInputElement).value)}
                         required
                     />
@@ -104,7 +101,7 @@ const PasswordResetForm = () => {
 
                 {/* Confirm Password */}
                 <div className="mt-4">
-                    <Label htmlFor="passwordConfirmation">
+                    <Label className="text-dark dark:text-white" htmlFor="passwordConfirmation">
                         Confirm Password
                     </Label>
 
@@ -112,7 +109,7 @@ const PasswordResetForm = () => {
                         id="passwordConfirmation"
                         type="password"
                         value={passwordConfirmation}
-                        className="block mt-1 w-full"
+                        className="block mt-1 w-full bg-[#f8f8f8] dark:bg-[#2C303B] dark:text-white"
                         onChange={(event: FormEvent) =>
                             setPasswordConfirmation((event.target as HTMLInputElement).value)
                         }
