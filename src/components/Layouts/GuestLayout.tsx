@@ -9,7 +9,7 @@ const GuestLayout = ({ children }: PropsType) => {
     return (
         <div>
             <Head>
-                <title>Next.js Fullstack Emulating Laravel Breeze</title>
+                <title>Next.js Fullstack Emulating Laravel Chirper</title>
             </Head>
             
             <UserContextPage>
