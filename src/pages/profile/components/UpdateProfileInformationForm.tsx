@@ -145,7 +145,7 @@ export default function UpdateProfileInformationForm({ mustVerifyEmail=false, ve
                {mustVerifyEmail && userContext.user?.email_verified_at === null && (
 
                     <div>
-                        <p className="text-sm mt-2 text-gray-800">
+                        <p className="text-sm mt-2 text-gray-800 dark:text-gray-100">
                             Your email address is unverified.
                             <Link
                                 href={'/'}

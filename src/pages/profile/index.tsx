@@ -1,12 +1,14 @@
 import AppLayout from '@/components/Layouts/AppLayout';
 import Head from 'next/head';
-import UpdateProfileInformationForm from './components/UpdateProfileInformationForm';
-import UpdatePasswordForm from './components/UpdatePasswordForm';
-import DeleteUserForm from './components/DeleteUserForm';
+import dynamic from 'next/dynamic';
 
 const Profile = () => {
     const mustVerifyEmail = true;
     const verifyEmail = '';
+
+    const UpdateProfileInformationForm = dynamic(() => import('./components/UpdateProfileInformationForm'), { ssr: false })
+    const UpdatePasswordForm = dynamic(() => import('./components/UpdatePasswordForm'), { ssr: false })
+    const DeleteUserForm = dynamic(() => import('./components/DeleteUserForm'), { ssr: false })
     
     return (
         <AppLayout

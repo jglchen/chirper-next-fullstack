@@ -87,7 +87,7 @@ const Navigation = () => {
                         {/* Logo */}
                         <div className="flex-shrink-0 flex items-center">
                             <Link href="/dashboard">
-                                <ApplicationLogo className="block w-20 h-20 fill-current text-gray-500" />
+                                <ApplicationLogo className="block w-20 h-20 fill-current text-gray-500 dark:text-gray-200" />
                             </Link>
                         </div>
 
