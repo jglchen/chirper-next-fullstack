@@ -59,13 +59,13 @@ const RegisterForm = () => {
         <form onSubmit={submitForm}>
             {/* Name */}
             <div>
-                <Label className="text-dark dark:text-white" htmlFor="name">Name</Label>
+                <Label htmlFor="name">Name</Label>
 
                 <Input
                     id="name"
                     type="text"
                     value={name}
-                    className="block mt-1 w-full bg-[#f8f8f8] dark:bg-[#2C303B] dark:text-white"
+                    className="block mt-1 w-full"
                     onChange={(event: FormEvent) => setName((event.target as HTMLInputElement).value)}
                     required
                     autoFocus
@@ -76,13 +76,13 @@ const RegisterForm = () => {
 
         {/* Email Address */}
         <div className="mt-4">
-            <Label className="text-dark dark:text-white" htmlFor="email">Email</Label>
+            <Label htmlFor="email">Email</Label>
 
             <Input
                 id="email"
                 type="email"
                 value={email}
-                className="block mt-1 w-full bg-[#f8f8f8] dark:bg-[#2C303B] dark:text-white"
+                className="block mt-1 w-full"
                 onChange={(event: FormEvent) => setEmail((event.target as HTMLInputElement).value)}
                 required
             />
@@ -92,13 +92,13 @@ const RegisterForm = () => {
 
         {/* Password */}
         <div className="mt-4">
-            <Label className="text-dark dark:text-white" htmlFor="password">Password</Label>
+            <Label htmlFor="password">Password</Label>
 
             <Input
                 id="password"
                 type="password"
                 value={password}
-                className="block mt-1 w-full bg-[#f8f8f8] dark:bg-[#2C303B] dark:text-white"
+                className="block mt-1 w-full"
                 onChange={(event: FormEvent) => setPassword((event.target as HTMLInputElement).value)}
                 required
                 autoComplete="new-password"
@@ -112,7 +112,7 @@ const RegisterForm = () => {
 
         {/* Confirm Password */}
         <div className="mt-4">
-            <Label className="text-dark dark:text-white" htmlFor="passwordConfirmation">
+            <Label htmlFor="passwordConfirmation">
                 Confirm Password
             </Label>
 
@@ -120,7 +120,7 @@ const RegisterForm = () => {
                 id="passwordConfirmation"
                 type="password"
                 value={passwordConfirmation}
-                className="block mt-1 w-full bg-[#f8f8f8] dark:bg-[#2C303B] dark:text-white"
+                className="block mt-1 w-full"
                 onChange={(event: FormEvent) =>
                     setPasswordConfirmation((event.target as HTMLInputElement).value)
                 }

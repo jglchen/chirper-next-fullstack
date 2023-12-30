@@ -76,8 +76,6 @@ const Navigation = () => {
         window.location.href = '/profile';
     };
 
-
-
     return (
         <nav className="bg-white dark:bg-black border-b border-gray-100 dark:border-gray-600">
             {/* Primary Navigation Menu */}
